@@ -9,15 +9,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <style>
     :root {
-      --bg: #0a0f1f;
-      --bg-soft: #101833;
-      --card: #131f43;
-      --text: #edf2ff;
-      --muted: #9fb0d9;
-      --primary: #7c8cff;
-      --primary-2: #5de7d6;
-      --line: #28345f;
-      --ok: #83f5b0;
+      --bg: #020617;
+      --bg-soft: #0f172a;
+      --card: #0f172a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #22c55e;
+      --primary-2: #4ade80;
+      --line: #1f2937;
+      --ok: #22c55e;
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
@@ -34,8 +34,8 @@
     body {
       font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(circle at 20% 10%, rgba(124, 140, 255, 0.22) 0%, rgba(10, 15, 31, 0) 35%),
-        radial-gradient(circle at 85% 20%, rgba(93, 231, 214, 0.18) 0%, rgba(10, 15, 31, 0) 35%),
+        radial-gradient(circle at 20% 10%, rgba(34, 197, 94, 0.12) 0%, rgba(2, 6, 23, 0) 35%),
+        radial-gradient(circle at 85% 20%, rgba(74, 222, 128, 0.1) 0%, rgba(2, 6, 23, 0) 35%),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -53,8 +53,8 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(10px);
-      background: rgba(10, 15, 31, 0.65);
-      border-bottom: 1px solid rgba(40, 52, 95, 0.8);
+      background: rgba(2, 6, 23, 0.82);
+      border-bottom: 1px solid rgba(34, 197, 94, 0.25);
     }
 
     .nav {
@@ -76,7 +76,7 @@
     }
 
     .brand .accent {
-      background: linear-gradient(135deg, #7b5cff, #53a0ff);
+      background: linear-gradient(135deg, #16a34a, #22c55e);
       background-size: 220% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -85,7 +85,7 @@
     }
 
     .brand .label {
-      background: linear-gradient(135deg, #9aa8ff, #76c8ff, #7fe9de);
+      background: linear-gradient(135deg, #86efac, #4ade80, #22c55e);
       background-size: 220% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -107,7 +107,7 @@
       border-radius: 10px;
       border: 1px solid rgba(93, 231, 214, 0.35);
       background: rgba(16, 24, 51, 0.82);
-      color: #dff7ff;
+      color: var(--text);
       align-items: center;
       justify-content: center;
       cursor: pointer;
@@ -207,14 +207,14 @@
       width: 139px;
       height: 139px;
       border-radius: 50%;
-      border: 2px solid rgba(93, 231, 214, 0.6);
+      border: 2px solid rgba(34, 197, 94, 0.6);
       background: radial-gradient(circle at 30% 30%, rgba(93, 231, 214, 0.14), rgba(124, 140, 255, 0.08) 52%, rgba(10, 15, 31, 0.25) 100%);
-      box-shadow: 0 0 22px rgba(93, 231, 214, 0.25);
+      box-shadow: 0 0 22px rgba(34, 197, 94, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.85rem;
-      color: #d5f8f1;
+      color: var(--text);
       font-weight: 700;
       letter-spacing: 0.4px;
       overflow: hidden;
@@ -251,7 +251,7 @@
     }
 
     .text-flow {
-      background: linear-gradient(90deg, #7c8cff 0%, #5de7d6 35%, #9df4ce 60%, #7c8cff 100%);
+      background: linear-gradient(90deg, #22c55e 0%, #4ade80 35%, #86efac 60%, #22c55e 100%);
       background-size: 220% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -268,7 +268,7 @@
       font-weight: 700;
       margin-top: -8px;
       margin-bottom: 2px;
-      color: #def5f0;
+      color: var(--text);
     }
 
     .lead {
@@ -302,7 +302,7 @@
     .home-skill-chips .chip {
       background: rgba(16, 24, 51, 0.85);
       border-color: rgba(93, 231, 214, 0.35);
-      color: #dcfbf6;
+      color: #d1fae5;
     }
 
     .home-about {
@@ -316,7 +316,7 @@
     }
 
     .home-about .section-head h2 {
-      color: #9df4ce;
+      color: var(--primary);
     }
 
     .home-about-grid {
@@ -371,7 +371,7 @@
       align-items: center;
       justify-content: center;
       background: rgba(93, 231, 214, 0.08);
-      color: #b8fff3;
+      color: #bbf7d0;
       font-size: 0.9rem;
       line-height: 1;
     }
@@ -395,9 +395,9 @@
     }
 
     .btn.primary {
-      color: #0a1025;
+      color: #052e16;
       background: linear-gradient(120deg, var(--primary-2), var(--primary));
-      box-shadow: 0 8px 25px rgba(124, 140, 255, 0.28);
+      box-shadow: 0 8px 25px rgba(34, 197, 94, 0.28);
     }
 
     .btn.secondary {
@@ -506,7 +506,7 @@
 
     .skills-header h2 {
       font-size: clamp(2rem, 4vw, 2.6rem);
-      color: #89f2cb;
+      color: var(--primary);
       margin-bottom: 8px;
     }
 
@@ -529,7 +529,7 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 7px 13px;
-      color: #d4e0ff;
+      color: var(--text);
       background: rgba(16, 24, 51, 0.8);
       font-size: 0.9rem;
       font-weight: 600;
@@ -538,9 +538,9 @@
     }
 
     .skills-tabs .tab.active {
-      color: #072216;
+      color: #052e16;
       border-color: rgba(93, 231, 214, 0.55);
-      background: linear-gradient(120deg, #6af5dd, #7c8cff);
+      background: linear-gradient(120deg, #4ade80, #22c55e);
       box-shadow: 0 0 18px rgba(93, 231, 214, 0.25);
     }
 
@@ -583,7 +583,7 @@
       border-radius: 8px;
       border: 1px solid rgba(93, 231, 214, 0.32);
       background: rgba(93, 231, 214, 0.1);
-      color: #b8fff3;
+      color: #bbf7d0;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -596,7 +596,7 @@
     }
 
     .skill-icon.manual i {
-      color: #49dcb1;
+      color: var(--primary);
     }
 
     .skill-meta {
@@ -612,7 +612,7 @@
     }
 
     .skill-meta span {
-      color: #95f3cb;
+      color: #86efac;
       font-size: 0.88rem;
       font-weight: 700;
     }
@@ -628,7 +628,8 @@
     .skill-fill {
       height: 100%;
       border-radius: 999px;
-      background: linear-gradient(90deg, #5de7d6, #7c8cff);
+      background: linear-gradient(90deg, #4ade80, #22c55e);
+      transition: width 0.45s ease;
     }
 
     .skill-group {
@@ -641,7 +642,7 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 7px 11px;
-      color: #c5d3fb;
+      color: #d1fae5;
       background: rgba(16, 24, 51, 0.75);
       font-size: 0.9rem;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -659,7 +660,7 @@
     }
 
     .project {
-      background: linear-gradient(180deg, #132044 0%, #101833 100%);
+      background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
       border: 1px solid var(--line);
       border-radius: 14px;
       overflow: hidden;
@@ -677,12 +678,12 @@
 
     .project .thumb {
       min-height: 120px;
-      background: linear-gradient(130deg, rgba(124, 140, 255, 0.3), rgba(93, 231, 214, 0.22));
+      background: linear-gradient(130deg, rgba(34, 197, 94, 0.25), rgba(74, 222, 128, 0.2));
       border-bottom: 1px solid var(--line);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #d8e6ff;
+      color: var(--text);
       font-size: 0.9rem;
       font-weight: 600;
     }
@@ -706,7 +707,7 @@
     }
 
     .project .meta {
-      color: #b9c9f0;
+      color: #cbd5e1;
       font-size: 0.84rem;
       margin-top: -2px;
     }
@@ -721,7 +722,7 @@
     }
 
     .project .tech {
-      color: #d5e5ff;
+      color: #d1fae5;
       font-size: 0.88rem;
       margin-top: auto;
     }
@@ -736,7 +737,7 @@
     .projects-cta {
       margin-top: 18px;
       text-align: center;
-      color: #cfe1ff;
+      color: var(--text);
       border-top: 1px solid rgba(93, 231, 214, 0.22);
       padding-top: 12px;
     }
@@ -754,6 +755,12 @@
       padding-left: 18px;
       display: grid;
       gap: 14px;
+    }
+
+    #achievements .timeline {
+      border-left: none;
+      margin-left: 0;
+      padding-left: 0;
     }
 
     .timeline .item {
@@ -783,14 +790,64 @@
       box-shadow: 0 0 0 3px rgba(124, 140, 255, 0.15);
     }
 
+    #achievements .timeline .item::before {
+      display: none;
+    }
+
+    .achv-icon {
+      position: static;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      background: radial-gradient(circle at 30% 30%, rgba(34, 197, 94, 0.35), rgba(22, 101, 52, 0.45));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbf7d0;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.14);
+      margin-bottom: 8px;
+    }
+
+    .achv-icon i {
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+
+    .achv-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    #achievements .item .achv-date {
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
     .item small {
-      color: #b8c7ef;
+      color: #cbd5e1;
       font-size: 0.82rem;
     }
 
     .item p {
       color: var(--muted);
       margin-top: 4px;
+    }
+
+    .item a {
+      color: var(--primary-2);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .item .issuer {
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      margin-top: 6px;
     }
 
     .contact {
@@ -816,7 +873,7 @@
 
     .contact-form label {
       font-size: 0.9rem;
-      color: #cfe3ff;
+      color: var(--text);
       margin-bottom: -4px;
     }
 
@@ -901,14 +958,14 @@
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      border: 1px solid rgba(170, 126, 255, 0.72);
-      background: linear-gradient(135deg, #25d0ff 0%, #7f66ff 52%, #ff5ea8 100%);
+      border: 1px solid rgba(34, 197, 94, 0.72);
+      background: linear-gradient(135deg, #16a34a 0%, #22c55e 52%, #4ade80 100%);
       color: #ffffff;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      box-shadow: 0 0 0 4px rgba(127, 102, 255, 0.16), 0 8px 24px rgba(127, 102, 255, 0.38), 0 0 18px rgba(255, 94, 168, 0.35);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.16), 0 8px 24px rgba(34, 197, 94, 0.38), 0 0 18px rgba(74, 222, 128, 0.35);
       z-index: 80;
       animation: aiPulse 2s ease-in-out infinite;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -921,7 +978,7 @@
 
     .ai-chat-fab:hover {
       transform: translateY(-1px);
-      box-shadow: 0 0 0 5px rgba(127, 102, 255, 0.2), 0 12px 28px rgba(127, 102, 255, 0.45), 0 0 26px rgba(255, 94, 168, 0.4);
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.2), 0 12px 28px rgba(34, 197, 94, 0.45), 0 0 26px rgba(74, 222, 128, 0.4);
     }
 
     .ai-chat-fab.open {
@@ -947,7 +1004,7 @@
     }
 
     .chat-popover .title {
-      color: #daf7ff;
+      color: var(--text);
       font-size: 0.9rem;
       margin-bottom: 8px;
       text-align: center;
@@ -958,7 +1015,7 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      color: #e8f2ff;
+      color: var(--text);
       border: 1px solid rgba(93, 231, 214, 0.2);
       border-radius: 10px;
       background: rgba(16, 24, 51, 0.85);
@@ -980,7 +1037,7 @@
     }
 
     .chat-option.linkedin i {
-      color: #0a66c2;
+      color: #22c55e;
     }
 
     .chat-option:hover {
@@ -990,10 +1047,10 @@
 
     @keyframes aiPulse {
       0%, 100% {
-        box-shadow: 0 0 0 4px rgba(127, 102, 255, 0.16), 0 8px 24px rgba(127, 102, 255, 0.38), 0 0 18px rgba(255, 94, 168, 0.35);
+        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.16), 0 8px 24px rgba(34, 197, 94, 0.38), 0 0 18px rgba(74, 222, 128, 0.35);
       }
       50% {
-        box-shadow: 0 0 0 8px rgba(127, 102, 255, 0.08), 0 10px 28px rgba(127, 102, 255, 0.45), 0 0 26px rgba(255, 94, 168, 0.42);
+        box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.08), 0 10px 28px rgba(34, 197, 94, 0.45), 0 0 26px rgba(74, 222, 128, 0.42);
       }
     }
 
@@ -1241,12 +1298,10 @@
             <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="devicon-selenium-original colored"></i></span><div class="skill-meta"><h3>Selenium</h3><span>87%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 87%;"></div></div><p class="skill-group">Testing / QA</p></article>
             <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="bi bi-flask-fill"></i></span><div class="skill-meta"><h3>TestNG</h3><span>85%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div><p class="skill-group">Testing / QA</p></article>
             <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="bi bi-beaker-fill"></i></span><div class="skill-meta"><h3>JUnit</h3><span>79%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 79%;"></div></div><p class="skill-group">Testing / QA</p></article>
-            <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="devicon-cypressio-plain colored"></i></span><div class="skill-meta"><h3>Cypress</h3><span>83%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 83%;"></div></div><p class="skill-group">Testing / QA</p></article>
             <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="devicon-postman-plain colored"></i></span><div class="skill-meta"><h3>Postman</h3><span>88%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div><p class="skill-group">Testing / QA</p></article>
             <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon manual"><i class="bi bi-clipboard2-check-fill"></i></span><div class="skill-meta"><h3>Manual Testing</h3><span>92%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div><p class="skill-group">Testing / QA</p></article>
             <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="bi bi-speedometer2"></i></span><div class="skill-meta"><h3>Apache JMeter</h3><span>81%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 81%;"></div></div><p class="skill-group">Testing / QA</p></article>
             <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="bi bi-bug-fill"></i></span><div class="skill-meta"><h3>Bugzilla</h3><span>78%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 78%;"></div></div><p class="skill-group">Testing / QA</p></article>
-            <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="bi bi-phone-fill"></i></span><div class="skill-meta"><h3>Espresso</h3><span>76%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 76%;"></div></div><p class="skill-group">Testing / QA</p></article>
             <article class="skill-card" data-category="testing"><div class="skill-top"><span class="skill-icon"><i class="bi bi-activity"></i></span><div class="skill-meta"><h3>APM</h3><span>74%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 74%;"></div></div><p class="skill-group">Testing / QA</p></article>
             <article class="skill-card" data-category="tools"><div class="skill-top"><span class="skill-icon"><i class="devicon-git-plain colored"></i></span><div class="skill-meta"><h3>Git</h3><span>84%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 84%;"></div></div><p class="skill-group">Tools / Platforms</p></article>
             <article class="skill-card" data-category="tools"><div class="skill-top"><span class="skill-icon"><i class="devicon-github-original colored"></i></span><div class="skill-meta"><h3>GitHub</h3><span>86%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 86%;"></div></div><p class="skill-group">Tools / Platforms</p></article>
@@ -1254,8 +1309,6 @@
             <article class="skill-card" data-category="tools"><div class="skill-top"><span class="skill-icon"><i class="bi bi-kanban-fill"></i></span><div class="skill-meta"><h3>Jira</h3><span>82%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 82%;"></div></div><p class="skill-group">Tools / Platforms</p></article>
             <article class="skill-card" data-category="tools"><div class="skill-top"><span class="skill-icon"><i class="devicon-jenkins-line colored"></i></span><div class="skill-meta"><h3>Jenkins</h3><span>79%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 79%;"></div></div><p class="skill-group">Tools / Platforms</p></article>
             <article class="skill-card" data-category="tools"><div class="skill-top"><span class="skill-icon"><i class="devicon-eclipse-plain colored"></i></span><div class="skill-meta"><h3>Eclipse</h3><span>77%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 77%;"></div></div><p class="skill-group">Tools / Platforms</p></article>
-            <article class="skill-card" data-category="tools"><div class="skill-top"><span class="skill-icon"><i class="devicon-vercel-original"></i></span><div class="skill-meta"><h3>Vercel</h3><span>78%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 78%;"></div></div><p class="skill-group">Tools / Platforms</p></article>
-            <article class="skill-card" data-category="tools"><div class="skill-top"><span class="skill-icon"><i class="devicon-netlify-plain colored"></i></span><div class="skill-meta"><h3>Netlify</h3><span>80%</span></div></div><div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div><p class="skill-group">Tools / Platforms</p></article>
           </div>
         </div>
       </div>
@@ -1314,19 +1367,29 @@
         </div>
         <div class="timeline">
           <article class="item">
-            <small>2025 - Present</small>
-            <h3>Freelance Web Developer</h3>
-            <p>Built responsive websites and frontend solutions for clients with performance-focused implementation.</p>
+            <small>Certificate</small>
+            <h3><a href="https://drive.google.com/file/d/1v6jdjCBSKinpXe52m_-GhWucC9QZrZTA/view?usp=drivesdk" target="_blank" rel="noreferrer">Build Generative AI Apps and Solutions with No-Code Tools</a></h3>
+            <p class="issuer">Google</p>
           </article>
           <article class="item">
-            <small>2023 - 2025</small>
-            <h3>Personal & Open Source Projects</h3>
-            <p>Worked on portfolio, utility apps, and fullstack practice projects to strengthen problem solving.</p>
+            <small>Certificate</small>
+            <h3><a href="https://drive.google.com/file/d/1sA9TR8935wawb4T4shyX-G7G804Uefpc/view?usp=drivesdk" target="_blank" rel="noreferrer">Privacy and Security in Online Social Media</a></h3>
+            <p class="issuer">Course Provider</p>
           </article>
           <article class="item">
-            <small>Education</small>
-            <h3>Your Degree / College Name</h3>
-            <p>Add your education details, certifications, and relevant coursework here.</p>
+            <small>Certificate</small>
+            <h3><a href="https://drive.google.com/file/d/1CA6RbaiPShAnflTsWDtJsg-6noawDJgu/view?usp=drivesdk" target="_blank" rel="noreferrer">DSA by CipherSchools</a></h3>
+            <p class="issuer">CipherSchools</p>
+          </article>
+          <article class="item">
+            <small>Certificate</small>
+            <h3><a href="https://drive.google.com/file/d/17vhGvTCfT44MIm-inRER0Paak8hE_oF8/view?usp=drivesdk" target="_blank" rel="noreferrer">Computational Theory: Language Principle and Finite Automata Theory</a></h3>
+            <p class="issuer">Course Provider</p>
+          </article>
+          <article class="item">
+            <small>Certificate</small>
+            <h3><a href="https://drive.google.com/file/d/1Jwt57jE4ev5NsAjEnBlrIQh013Zb45uh/view?usp=drivesdk" target="_blank" rel="noreferrer">ChatGPT-4 Prompt Engineering: ChatGPT, Generative AI and LLM</a></h3>
+            <p class="issuer">Course Provider</p>
           </article>
         </div>
       </div>
@@ -1340,19 +1403,22 @@
         </div>
         <div class="timeline">
           <article class="item">
-            <small>Quality Engineering</small>
-            <h3>Automation Impact</h3>
-            <p>Executed and maintained high-coverage test suites that improved release confidence and reduced regression time.</p>
+            <span class="achv-icon"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="achv-top">
+              <small>Competitive Programming</small>
+              <span class="achv-date">10 March 2026</span>
+            </div>
+            <h3>300+ DSA Problems Solved</h3>
+            <p>Solved 300+ DSA problems on LeetCode, CodeChef, and HackerRank, improving algorithmic thinking, data structures knowledge, and coding efficiency.</p>
           </article>
           <article class="item">
-            <small>Project Delivery</small>
-            <h3>Real-World QA Projects</h3>
-            <p>Delivered testing-focused projects with bug reporting, framework design, and API validation workflows.</p>
-          </article>
-          <article class="item">
-            <small>Continuous Learning</small>
-            <h3>Hands-On Skill Growth</h3>
-            <p>Expanded practical expertise in automation, performance basics, and end-to-end test strategy implementation.</p>
+            <span class="achv-icon"><i class="bi bi-phone-fill"></i></span>
+            <div class="achv-top">
+              <small>Mobile Automation</small>
+              <span class="achv-date">20 December 2025</span>
+            </div>
+            <h3>Appium-Based Android Testing</h3>
+            <p>Implemented mobile test automation using Appium, creating and executing automated test scripts for Android apps to verify UI elements, functionality, and application stability.</p>
           </article>
         </div>
       </div>
@@ -1457,6 +1523,7 @@
 
     const skillTabs = Array.from(document.querySelectorAll(".skills-tabs .tab"));
     const skillCards = Array.from(document.querySelectorAll(".skills-grid .skill-card"));
+    const skillFills = Array.from(document.querySelectorAll(".skills-grid .skill-fill"));
 
     function filterSkills(filterKey) {
       skillCards.forEach((card) => {
@@ -1473,6 +1540,41 @@
         tab.classList.add("active");
         filterSkills(filterKey);
       });
+    });
+
+    // Keep bars empty by default; fill only on hover/touch.
+    skillFills.forEach((fill) => {
+      const targetWidth = fill.style.width || "0%";
+      fill.dataset.targetWidth = targetWidth;
+      fill.style.width = "0%";
+    });
+
+    function setCardFill(card, shouldFill) {
+      const fills = card.querySelectorAll(".skill-fill");
+      fills.forEach((fill) => {
+        fill.style.width = shouldFill ? (fill.dataset.targetWidth || "0%") : "0%";
+      });
+    }
+
+    const touchTimers = new WeakMap();
+    skillCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => setCardFill(card, true));
+      card.addEventListener("mouseleave", () => setCardFill(card, false));
+      card.addEventListener("focusin", () => setCardFill(card, true));
+      card.addEventListener("focusout", () => setCardFill(card, false));
+
+      card.addEventListener("touchstart", () => {
+        setCardFill(card, true);
+        const prevTimer = touchTimers.get(card);
+        if (prevTimer) clearTimeout(prevTimer);
+      }, { passive: true });
+
+      card.addEventListener("touchend", () => {
+        const timer = setTimeout(() => setCardFill(card, false), 450);
+        touchTimers.set(card, timer);
+      }, { passive: true });
+
+      card.addEventListener("touchcancel", () => setCardFill(card, false), { passive: true });
     });
 
     const initialId = (window.location.hash || "#home").slice(1);
