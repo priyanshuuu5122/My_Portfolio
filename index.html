@@ -158,17 +158,79 @@
       background: rgba(124, 140, 255, 0.14);
     }
 
-    .menu a.resume-pill {
-      border-color: rgba(93, 231, 214, 0.45);
+    .menu a.resume-pill,
+    .menu button.resume-pill {
+      border: 1px solid rgba(93, 231, 214, 0.45);
       background: rgba(93, 231, 214, 0.12);
       color: var(--text);
       font-weight: 700;
       box-shadow: 0 0 0 1px rgba(93, 231, 214, 0.1), 0 0 20px rgba(93, 231, 214, 0.14);
+      font: inherit;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 8px 18px;
+      appearance: none;
+      -webkit-appearance: none;
     }
 
-    .menu a.resume-pill:hover {
+    .menu a.resume-pill:hover,
+    .menu button.resume-pill:hover {
       border-color: rgba(93, 231, 214, 0.7);
       background: rgba(93, 231, 214, 0.2);
+    }
+
+    .menu .nav-dropdown {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .menu button.resume-pill .caret {
+      display: inline-block;
+      margin-left: 4px;
+      font-size: 0.75em;
+      vertical-align: middle;
+      transition: transform 0.2s ease;
+    }
+
+    .menu .nav-dropdown.is-open button.resume-pill .caret {
+      transform: rotate(180deg);
+    }
+
+    .menu .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 220px;
+      padding: 8px;
+      flex-direction: column;
+      gap: 4px;
+      border: 1px solid rgba(40, 52, 95, 0.95);
+      border-radius: 12px;
+      background: rgba(10, 15, 31, 0.98);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+      z-index: 50;
+    }
+
+    .menu .nav-dropdown.is-open .nav-dropdown-menu {
+      display: flex;
+    }
+
+    .menu .nav-dropdown-menu a {
+      display: block;
+      width: 100%;
+      text-align: left;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      padding: 10px 12px;
+      color: var(--muted);
+    }
+
+    .menu .nav-dropdown-menu a:hover {
+      color: var(--text);
+      background: rgba(16, 24, 51, 0.85);
     }
 
     main {
@@ -686,6 +748,16 @@
       color: var(--text);
       font-size: 0.9rem;
       font-weight: 600;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .project .thumb img {
+      width: 100%;
+      height: 100%;
+      min-height: 120px;
+      object-fit: cover;
+      display: block;
     }
 
     .project .body {
@@ -1093,6 +1165,28 @@
         text-align: left;
       }
 
+      .menu .nav-dropdown {
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .menu button.resume-pill {
+        width: 100%;
+        text-align: left;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .menu .nav-dropdown-menu {
+        position: static;
+        min-width: unset;
+        margin-top: 6px;
+        box-shadow: none;
+        background: rgba(6, 10, 22, 0.95);
+        border-color: rgba(93, 231, 214, 0.2);
+      }
+
       .home-about-grid,
       .grid-2 {
         grid-template-columns: 1fr;
@@ -1149,7 +1243,16 @@
         <a href="#certifications">Certifications</a>
         <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
-        <a href="https://drive.google.com/file/d/1J2KnJNhLLU3DvlBvIJdP0dy8Fvp-mPNS/view" target="_blank" rel="noreferrer" class="resume-pill">Resume Download</a>
+        <div class="nav-dropdown" id="resumeDropdown">
+          <button type="button" class="resume-pill" id="resumeDropdownBtn" aria-expanded="false" aria-haspopup="true" aria-controls="resumeDropdownMenu">
+            Resume
+            <i class="bi bi-chevron-down caret" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dropdown-menu" id="resumeDropdownMenu" role="menu">
+            <a href="https://drive.google.com/file/d/1J2KnJNhLLU3DvlBvIJdP0dy8Fvp-mPNS/view" target="_blank" rel="noreferrer" role="menuitem">View my resume</a>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1J2KnJNhLLU3DvlBvIJdP0dy8Fvp-mPNS" target="_blank" rel="noreferrer" role="menuitem">Download my resume</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -1322,7 +1425,9 @@
         </div>
         <div class="projects">
           <article class="project">
-            <div class="thumb">Upload LMS screenshot here later</div>
+            <div class="thumb">
+              <img src="https://drive.google.com/thumbnail?id=1nsxG8WmH-g33AUu6krjdA24Fo5ZS9NC9&amp;sz=w1200" alt="LMS Testing project screenshot" loading="lazy" />
+            </div>
             <div class="body">
               <h3>Learning Management System (LMS) Testing</h3>
               <p class="meta">GitHub | Aug'25 - Sep'25</p>
@@ -1337,7 +1442,9 @@
             </div>
           </article>
           <article class="project">
-            <div class="thumb">Upload AI chatbot screenshot here later</div>
+            <div class="thumb">
+              <img src="https://drive.google.com/thumbnail?id=1nA6FYk9np1Rct1mv-EARqLqMe6ak5CVD&amp;sz=w1200" alt="AI Order Tracking Chatbot project screenshot" loading="lazy" />
+            </div>
             <div class="body">
               <h3>AI Order Tracking Chatbot</h3>
               <p class="meta">GitHub | Feb'25 - Mar'25</p>
@@ -1410,6 +1517,15 @@
             </div>
             <h3>300+ DSA Problems Solved</h3>
             <p>Solved 300+ DSA problems on LeetCode, CodeChef, and HackerRank, improving algorithmic thinking, data structures knowledge, and coding efficiency.</p>
+          </article>
+          <article class="item">
+            <span class="achv-icon"><i class="bi bi-award-fill"></i></span>
+            <div class="achv-top">
+              <small>HackerRank</small>
+              <span class="achv-date">2026</span>
+            </div>
+            <h3>Gold Badge in C++</h3>
+            <p>Earned the Gold Badge in C++ by solving advanced programming challenges and demonstrating strong OOPS and algorithmic problem-solving skills.</p>
           </article>
           <article class="item">
             <span class="achv-icon"><i class="bi bi-phone-fill"></i></span>
@@ -1644,6 +1760,10 @@
     const siteMenu = document.getElementById("siteMenu");
 
     function closeMenu() {
+      const rd = document.getElementById("resumeDropdown");
+      const rdb = document.getElementById("resumeDropdownBtn");
+      if (rd) rd.classList.remove("is-open");
+      if (rdb) rdb.setAttribute("aria-expanded", "false");
       if (!siteMenu || !menuToggle) return;
       siteMenu.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", "false");
@@ -1674,6 +1794,44 @@
         if (window.innerWidth > 940) {
           closeMenu();
         }
+      });
+    }
+
+    const resumeDropdown = document.getElementById("resumeDropdown");
+    const resumeDropdownBtn = document.getElementById("resumeDropdownBtn");
+    const resumeDropdownMenu = document.getElementById("resumeDropdownMenu");
+
+    function setResumeDropdown(open) {
+      if (!resumeDropdown || !resumeDropdownBtn) return;
+      resumeDropdown.classList.toggle("is-open", open);
+      resumeDropdownBtn.setAttribute("aria-expanded", String(open));
+    }
+
+    if (resumeDropdownBtn && resumeDropdown) {
+      resumeDropdownBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const open = !resumeDropdown.classList.contains("is-open");
+        setResumeDropdown(open);
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!resumeDropdown.classList.contains("is-open")) return;
+        if (!resumeDropdown.contains(event.target)) {
+          setResumeDropdown(false);
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && resumeDropdown.classList.contains("is-open")) {
+          setResumeDropdown(false);
+        }
+      });
+
+      resumeDropdownMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          setResumeDropdown(false);
+          closeMenu();
+        });
       });
     }
 
