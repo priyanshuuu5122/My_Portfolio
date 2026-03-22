@@ -28,7 +28,7 @@
     }
 
     html {
-      scroll-behavior: auto;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -40,7 +40,8 @@
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     .container {
@@ -52,6 +53,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
+      flex-shrink: 0;
       backdrop-filter: blur(10px);
       background: rgba(2, 6, 23, 0.82);
       border-bottom: 1px solid rgba(34, 197, 94, 0.25);
@@ -234,20 +236,19 @@
     }
 
     main {
-      min-height: calc(100vh - 78px);
-    }
-
-    .page-section {
-      display: none;
-      max-height: calc(100vh - 78px);
-      overflow-y: auto;
-      overflow-x: hidden;
-      scrollbar-width: thin;
-      scrollbar-color: var(--line) transparent;
-    }
-
-    .page-section.active {
       display: block;
+    }
+
+    /* All sections visible, stacked; one continuous page scroll */
+    .page-section {
+      display: block;
+      width: 100%;
+      scroll-margin-top: 88px;
+      padding-bottom: 8px;
+    }
+
+    #home .container.home-content {
+      padding-bottom: 28px;
     }
 
     .hero {
@@ -391,21 +392,6 @@
     .home-about-grid .card {
       background: rgba(16, 24, 51, 0.75);
       border-color: rgba(93, 231, 214, 0.25);
-    }
-
-    .home-bottom-cta {
-      width: 100%;
-      text-align: center;
-      margin-top: 14px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(93, 231, 214, 0.2);
-    }
-
-    .home-bottom-cta a {
-      color: var(--primary-2);
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0.2px;
     }
 
     .home-about-grid h3 {
@@ -1206,10 +1192,6 @@
         padding-top: 70px;
       }
 
-      .home-content {
-        min-height: calc(100vh - 190px);
-      }
-
       .projects {
         grid-template-columns: 1fr;
       }
@@ -1341,32 +1323,6 @@
               </p>
             </article>
           </div>
-        </div>
-        <div class="home-bottom-cta">
-          <a href="#projects">See my projects</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="page-section">
-      <div class="container">
-        <div class="section-head">
-          <h2>About Me</h2>
-          <p>Who I am and what I do</p>
-        </div>
-        <div class="grid-2">
-          <article class="card">
-            <p>
-              I am Priyanshu Raj, a passionate web developer who enjoys turning ideas into high-quality digital experiences.
-              My focus is writing maintainable code, creating smooth user interactions, and shipping projects quickly.
-            </p>
-          </article>
-          <article class="card">
-            <p>
-              I work with modern technologies and continuously improve by building real projects.
-              My long-term goal is to create products that are simple, useful, and visually strong.
-            </p>
-          </article>
         </div>
       </div>
     </section>
@@ -1607,22 +1563,27 @@
     const navLinks = Array.from(document.querySelectorAll('.menu a[href^="#"]'));
     const sectionLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
 
-    function activateSection(id, updateHash = true) {
+    function scrollToSection(id) {
       const targetSection = document.getElementById(id);
       if (!targetSection) return;
+      targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, "", `#${id}`);
+      updateActiveNav();
+    }
 
-      sections.forEach((section) => {
-        section.classList.toggle("active", section.id === id);
-      });
-
-      navLinks.forEach((link) => {
-        const isActive = link.getAttribute("href") === `#${id}`;
-        link.classList.toggle("active", isActive);
-      });
-
-      if (updateHash) {
-        history.replaceState(null, "", `#${id}`);
+    function updateActiveNav() {
+      if (!sections.length || !navLinks.length) return;
+      const fromTop = 140;
+      let currentId = sections[0].id;
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= fromTop) {
+          currentId = section.id;
+        }
       }
+      navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        link.classList.toggle("active", href === `#${currentId}`);
+      });
     }
 
     sectionLinks.forEach((link) => {
@@ -1633,8 +1594,27 @@
         const id = href.slice(1);
         if (!id) return;
         event.preventDefault();
-        activateSection(id);
+        scrollToSection(id);
       });
+    });
+
+    window.addEventListener("scroll", updateActiveNav, { passive: true });
+    window.addEventListener("resize", updateActiveNav);
+
+    window.addEventListener("load", () => {
+      const hash = window.location.hash.slice(1);
+      if (hash && document.getElementById(hash)) {
+        document.getElementById(hash).scrollIntoView({ behavior: "auto", block: "start" });
+      }
+      updateActiveNav();
+    });
+
+    window.addEventListener("hashchange", () => {
+      const hash = window.location.hash.slice(1);
+      if (hash && document.getElementById(hash)) {
+        document.getElementById(hash).scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      updateActiveNav();
     });
 
     const skillTabs = Array.from(document.querySelectorAll(".skills-tabs .tab"));
@@ -1693,8 +1673,7 @@
       card.addEventListener("touchcancel", () => setCardFill(card, false), { passive: true });
     });
 
-    const initialId = (window.location.hash || "#home").slice(1);
-    activateSection(initialId, false);
+    updateActiveNav();
     filterSkills("all");
 
     const contactForm = document.querySelector(".contact-form");
